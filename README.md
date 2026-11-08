@@ -21,4 +21,22 @@ Este proyecto es una aplicación de línea de comandos (CLI) escrita en Python q
 
 
 \---
+<!-- Esto va cambiar en un futuro (ESTO NO VA A SER FIJO MUCHACHOS)-->
+## Estado actual del repositorio
+Esta primera entrega incluye únicamente dos módulos:
 
+- `validaciones.py`: lectura segura de enteros y textos con `try-except`.
+- `incidencias.py`: definición de las incidencias por jornada y sus decisiones.
+
+Los demás módulos (`configuracion.py`, `produccion.py`, `reportes.py`, `main.py`) se agregarán en commits posteriores.
+
+## Integrantes
+- Roimer Rodriguez
+- Esteban Cen
+- José Castillo
+- José Hernández
+
+## Cómo ejecutar
+Por ahora los módulos no son ejecutables de forma independiente. La ejecución completa llegará cuando se integre `main.py`.
+
+<!-- FINAL DE MENSAJE PROBICIONAL-->
