@@ -13,9 +13,9 @@ def leer_entero_en_rango(mensaje, minimo, maximo):
             if numero >= minimo and numero <= maximo:
                 valido = True
             else:  # entrada valida pero fuera de rango
-                print("Error: Opcion fuera de rango. Intente de nuevo.")
+                print("Error: Opción fuera de rango. Intente de nuevo.")
         except ValueError:  # entrada diferente a un numero entero
-            print("Error: Debe ingresar un numero entero valido.")
+            print("Error: Debe ingresar un número entero valido.")
     return numero
 
 def leer_texto(mensaje):

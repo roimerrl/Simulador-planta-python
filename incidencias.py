@@ -6,15 +6,15 @@ que se encarga de mostrar las incidencias y pedir al usuario que elija una opcio
 asi cada opción ajusta las variables de la simulación (costos, tiempo, materia prima y estado de la máquina)."""
 
 
-def aplicar_incidencia(jornada):
+def aplicar_incidencia(jornada, estado_actual):
     print("\n--------------------------------------------------")
-    print("                 INCIDENCIA DETECTADA             ")
+    print(f"          INCIDENCIA DE LA JORNADA {jornada}             ")
     print("--------------------------------------------------")
     
     costo_extra = 0.0
     horas_perdidas_extra = 0.0
     mp_extra = 0.0
-    nuevo_estado_maquina = 1
+    nuevo_estado_maquina = estado_actual  # Inicialmente el estado de la máquina no cambia
     
     if jornada == 1:
         print("Incidencia: Falla mecanica leve en el motor principal.")
@@ -25,11 +25,12 @@ def aplicar_incidencia(jornada):
         if opcion == 1:
             costo_extra = 150.0
             horas_perdidas_extra = 2.0
-            nuevo_estado_maquina = 1
+            nuevo_estado_maquina = 1        #Deja a la maquina operativa
         elif opcion == 2:
-            nuevo_estado_maquina = 0
+            nuevo_estado_maquina = 0        #Reparación rapida, pero la maquina queda inestable
         else:
-            nuevo_estado_maquina = 0
+            nuevo_estado_maquina = 0        # No se interviene, la maquina queda averiada
+
 
     elif jornada == 2:
         print("Incidencia: Lote de materia prima con retraso logistico.")
@@ -42,5 +43,52 @@ def aplicar_incidencia(jornada):
             mp_extra = 100.0
         elif opcion == 2:
             horas_perdidas_extra = 3.0
+        #esta jornada no toca a la maquina, por lo que no se cambia el estado de la misma
 
-            """Ya no aguanto mas el sueño T_T aguantenme un rato"""
+
+    elif jornada == 3:
+        print("Incidencia: Descalibración de sensores en linea de ensamblaje.")
+        print("1. Mantenimiento correctivo especializado (Costo $180, maquina calibrada)")
+        print("2. Parar una hora para calibración interna (Pierde 1 hora)")
+        print("3. Forzar linea sin recalibrar (Maquina averiada)")
+        opcion = leer_entero_en_rango("Opcion (1-3): ", 1, 3)
+        if opcion == 1:
+            costo_extra = 180.0
+            nuevo_estado_maquina = 1
+        elif opcion == 2:
+            horas_perdidas_extra = 1.0
+            nuevo_estado_maquina = 1
+        else:
+            nuevo_estado_maquina = 0
+
+    elif jornada == 4:
+        print("Incidencia: Fluctuación de voltaje en la red electrica.")
+        print("1. Encender planta electrica secundaria (Costo $120 combustible)")
+        print("2. Suspender labores 2 horas por seguridad (Pierde 2 horas)")
+        print("3. Asumir el riesgo operativo (Maquina queda vulnerable)")
+        opcion = leer_entero_en_rango("Opcion (1-3): ", 1, 3)
+        if opcion == 1:
+            costo_extra = 120.0
+            nuevo_estado_maquina = 1
+        elif opcion == 2:
+            horas_perdidas_extra = 2.0
+            nuevo_estado_maquina = 1
+        else:
+            nuevo_estado_maquina = 0
+
+    else:
+        print("Incidencia: Inspeccion de control de calidad de sorpresa.")
+        print("1. Auditoria  detenida (Pierde 2 horas, maquina revisada)")
+        print("2. Pago de arancel de certificación urgente (Costo $100)")
+        print("3. Continuar operaciones en paralelo (Riesgo de defectos)")
+        opcion = leer_entero_en_rango("Opción (1-3): ", 1, 3)
+        if opcion == 1:
+            horas_perdidas_extra = 2.0
+            nuevo_estado_maquina = 1
+        elif opcion == 2:
+            costo_extra = 100.0
+            nuevo_estado_maquina = 1
+        else:
+            nuevo_estado_maquina = 0
+
+    return costo_extra, horas_perdidas_extra, mp_extra, nuevo_estado_maquina        
