@@ -7,7 +7,9 @@
 def mostrar_panel_estado(plan, realizada, pendiente, materiaprima, desperdicio, h_disp, h_util, h_perd, defectuoso, calidad, costo, eficiencia, estado_maq):
     # El estado de la maquina se guarda como 1 o 0, pero al usuario hay que
     # mostrarle algo legible, por eso se convierte a texto antes de imprimir
-    if estado_maq == 1:
+    if estado_maq == 2:
+        texto_maq = "Optima"
+    elif estado_maq == 1:
         texto_maq = "Operativa"
     else:
         texto_maq = "Con fallas"
