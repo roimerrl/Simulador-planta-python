@@ -42,3 +42,5 @@ def calcular_costo_operativo(mp_consumida, H_utilizadas, H_perdidas, defectos):
     c4 = defectos * 2.0
     costo = c1 + c2 + c3 + c4
     return costo
+
+
