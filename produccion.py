@@ -1,0 +1,44 @@
+def planificar_jornada(meta_producir, materiadisp, horasdisp, estado_maquina):
+    if estado_maquina == 0:
+        print("aviso de planta: maquinaria con fallas")
+    
+    #gasta 1 kg de materia y 0.15 horas
+    posibles_m = int(materiadisp / 1.0)
+    posibles_hr = int(horasdisp / 0.15)
+    
+    producto = meta_producir
+    
+    if producto > posibles_m:
+        producto = posibles_m
+    if producto > posibles_hr:
+        producto = posibles_hr
+        
+    return producto
+
+
+def calcular_consumo(unidades_producidas):
+    #para saber cuanto material y horas se usaron
+    mp_consumida = unidades_producidas * 1.0
+    horas_utilizadas = unidades_producidas * 0.15
+    return mp_consumida, horas_utilizadas
+
+
+def calcular_defectos_desperdicio(unidades_producidas, estado_maquina):
+    # calculo de falla
+    tasa = 0.04
+    if estado_maquina == 0:
+        tasa = 0.14
+        
+    defectos = int(unidades_producidas * tasa)
+    desperdicio = defectos * 0.75
+    return defectos, desperdicio
+
+def calcular_costo_operativo(mp_consumida, H_utilizadas, H_perdidas, defectos):
+    # costos totales
+    mp_temp = float(mp_consumida)
+    c1 = mp_temp * 5.0
+    c2 = H_utilizadas * 10.0
+    c3 = H_perdidas * 15.0
+    c4 = defectos * 2.0
+    costo = c1 + c2 + c3 + c4
+    return costo
