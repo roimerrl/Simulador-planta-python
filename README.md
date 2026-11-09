@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \# Simulador de gestión y control de una planta de producción (GCPP)
 
 
@@ -38,3 +39,7 @@ El siguiente modulo (`main.py`) se agregará en commits posteriores.
 Por ahora los módulos no son ejecutables de forma independiente. La ejecución completa llegará cuando se integre `main.py`.
 
 <!-- FINAL DE MENSAJE PROBICIONAL-->
+=======
+ produccion.py
+Con este archivo archivo lo que busco es que se maneje toda la logica matemática de la planta. Bsicamente calcula cuántas piezas podemos armar segun los materiales y el tiempo que nos queda. También busca calcular cuantas unidades salen defectuosas (si la máquina está dañada o si tiene fallas) y saca la cuenta del costo total en dinero usando multiplicaciones y condicionales. 
+>>>>>>> calculo.de.planta+readme_JoseB
