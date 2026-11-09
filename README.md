@@ -23,13 +23,11 @@ Este proyecto es una aplicación de línea de comandos (CLI) escrita en Python q
 \---
 <!-- Esto va cambiar en un futuro (ESTO NO VA A SER FIJO MUCHACHOS)-->
 ## Estado actual del repositorio
-Esta primera entrega incluye únicamente dos módulos:
+Esta primera entrega incluye únicamente 1 módulo:
 
-- `validaciones.py`: lectura segura de enteros y textos con `try-except`.
-- `incidencias.py`: definición de las incidencias por jornada y sus decisiones.
+- `reportes.py`: encargado de mostrar el panel de estado de la planta, evaluar cada jornada e imprimir el informe final.
 
-Los demás módulos (`configuracion.py`, `produccion.py`, `reportes.py`, `main.py`) se agregarán en commits posteriores.
-
+El siguiente modulo (`main.py`) se agregará en commits posteriores.
 ## Integrantes
 - Roimer Rodriguez
 - Esteban Cen
