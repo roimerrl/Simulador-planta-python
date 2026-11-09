@@ -25,6 +25,7 @@ def calcular_consumo(unidades_producidas):
 
 def calcular_defectos_y_desperdicio(unidades_producidas, estado_maquina):
     # 0 = averiada (14%), 1 = operativa normal / ajuste rapido (4%), 2 = optima (0%)
+    #calculo de fallas 
     if estado_maquina == 2:
         tasa = 0.0
     elif estado_maquina == 1:
