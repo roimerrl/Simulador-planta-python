@@ -36,7 +36,7 @@ def calcular_defectos_y_desperdicio(unidades_producidas, estado_maquina):
     defectos = int(unidades_producidas * tasa)
     desperdicio = defectos * 0.75
     return defectos, desperdicio
-s
+
 
 def calcular_costo_operativo(mp_consumida, H_utilizadas, H_perdidas, defectos):
     # costos totales
