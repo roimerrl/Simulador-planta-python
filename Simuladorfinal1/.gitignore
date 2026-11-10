@@ -1,0 +1,17 @@
+# Ignorar archivos de configuracion local
+*.env
+*.log
+
+# Ignorar archivos temporales y de cache de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignorar dependencias y entornos virtuales
+node_modules/
+venv/
+env/
+
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db
